@@ -1,0 +1,23 @@
+{
+  "name": "spread-args",
+  "repo": "pluma/spread-args",
+  "description": "Makes functions that expect multiple arguments accept a single array instead.",
+  "keywords": [
+    "spread",
+    "function",
+    "arguments",
+    "array"
+  ],
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": ["dist/spread-args.js"],
+  "main": "./dist/spread-args.js",
+  "ignore": [
+    "**/.*",
+    "build",
+    "components",
+    "node_modules"
+  ],
+  "license": "CC0"
+}
