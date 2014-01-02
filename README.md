@@ -42,7 +42,7 @@ component install pluma/spread-args
 ### With bower
 
 ```sh
-bower install spread-args
+bower install spread
 ```
 
 [Learn more about bower](https://github.com/twitter/bower).
