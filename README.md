@@ -110,6 +110,6 @@ join2(['foo', 'bar', '-']); // 'foo-bar'
 join2(['foo', 'bar'], '-'); // 'foo-bar'
 ```
 
-# License
+# Unlicense
 
-The code is released into the Public Domain according to the terms of [CC0](http://creativecommons.org/publicdomain/zero/1.0/).
+This is free and unencumbered public domain software. For more information, see http://unlicense.org/ or the accompanying [UNLICENSE](https://github.com/pluma/spread-args/blob/master/UNLICENSE) file.

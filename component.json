@@ -8,7 +8,7 @@
     "arguments",
     "array"
   ],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {},
   "devDependencies": {},
   "scripts": ["dist/spread-args.js"],
@@ -19,5 +19,5 @@
     "components",
     "node_modules"
   ],
-  "license": "CC0"
+  "license": "UNLICENSE"
 }
