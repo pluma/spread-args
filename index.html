@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="spread-args : makes functions accept a single array as arguments" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>spread-args</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pluma/spread-args">View on GitHub</a>
+
+          <h1 id="project_title">spread-args</h1>
+          <h2 id="project_tagline">makes functions accept a single array as arguments</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pluma/spread-args/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pluma/spread-args/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="synopsis" class="anchor" href="#synopsis"><span class="octicon octicon-link"></span></a>Synopsis</h1>
+
+<p><strong>spread-args</strong> is a JavaScript function for converting a function accepting multiple arguments into a function accepting a single array of arguments.</p>
+
+<p><a href="https://ci.testling.com/pluma/spread-args"><img src="https://ci.testling.com/pluma/spread-args.png" alt="browser support"></a></p>
+
+<p><a href="https://travis-ci.org/pluma/spread-args"><img src="https://travis-ci.org/pluma/spread-args.png?branch=master" alt="Build Status"></a> <a href="http://badge.fury.io/js/spread-args"><img src="https://badge.fury.io/js/spread-args.png" alt="NPM version"></a> <a href="https://david-dm.org/pluma/spread-args"><img src="https://david-dm.org/pluma/spread-args.png" alt="Dependencies"></a></p>
+
+<h1>
+<a name="why" class="anchor" href="#why"><span class="octicon octicon-link"></span></a>Why?</h1>
+
+<p>It's trivial to implement, but in order to keep code DRY (and avoid silly mistakes) it makes sense to define this function only once per project. This library is the logical consequence of that.</p>
+
+<h1>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h1>
+
+<h2>
+<a name="nodejs" class="anchor" href="#nodejs"><span class="octicon octicon-link"></span></a>Node.js</h2>
+
+<h3>
+<a name="with-npm" class="anchor" href="#with-npm"><span class="octicon octicon-link"></span></a>With NPM</h3>
+
+<div class="highlight highlight-sh"><pre>npm install spread-args
+</pre></div>
+
+<h3>
+<a name="from-source" class="anchor" href="#from-source"><span class="octicon octicon-link"></span></a>From source</h3>
+
+<div class="highlight highlight-sh"><pre>git clone https://github.com/pluma/spread-args.git
+<span class="nb">cd </span>spread-args
+npm install
+make
+</pre></div>
+
+<h2>
+<a name="browser" class="anchor" href="#browser"><span class="octicon octicon-link"></span></a>Browser</h2>
+
+<h3>
+<a name="with-component" class="anchor" href="#with-component"><span class="octicon octicon-link"></span></a>With component</h3>
+
+<div class="highlight highlight-sh"><pre>component install pluma/spread-args
+</pre></div>
+
+<p><a href="https://github.com/component/component">Learn more about component</a>.</p>
+
+<h3>
+<a name="with-bower" class="anchor" href="#with-bower"><span class="octicon octicon-link"></span></a>With bower</h3>
+
+<div class="highlight highlight-sh"><pre>bower install spread
+</pre></div>
+
+<p><a href="https://github.com/twitter/bower">Learn more about bower</a>.</p>
+
+<h3>
+<a name="with-a-commonjs-module-loader" class="anchor" href="#with-a-commonjs-module-loader"><span class="octicon octicon-link"></span></a>With a CommonJS module loader</h3>
+
+<p>Download the <a href="https://raw.github.com/pluma/spread-args/master/dist/spread-args.min.js">latest minified CommonJS release</a> and add it to your project.</p>
+
+<p><a href="http://wiki.commonjs.org/wiki/Modules/1.1">Learn more about CommonJS modules</a>.</p>
+
+<h3>
+<a name="with-an-amd-module-loader" class="anchor" href="#with-an-amd-module-loader"><span class="octicon octicon-link"></span></a>With an AMD module loader</h3>
+
+<p>Download the <a href="https://raw.github.com/pluma/spread-args/master/dist/spread-args.amd.min.js">latest minified AMD release</a> and add it to your project.</p>
+
+<p><a href="http://requirejs.org/docs/whyamd.html">Learn more about AMD modules</a>.</p>
+
+<h3>
+<a name="as-a-standalone-library" class="anchor" href="#as-a-standalone-library"><span class="octicon octicon-link"></span></a>As a standalone library</h3>
+
+<p>Download the <a href="https://raw.github.com/pluma/spread-args/master/dist/spread-args.globals.min.js">latest minified standalone release</a> and add it to your project.</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/your/js/path/spread-args.globals.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>This makes the <code>spread-args</code> function available in the global namespace.</p>
+
+<h1>
+<a name="basic-usage-example" class="anchor" href="#basic-usage-example"><span class="octicon octicon-link"></span></a>Basic usage example</h1>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">spread</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'spread-args'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">'foo bar qux baz'</span><span class="p">;</span>
+<span class="p">[</span>
+    <span class="p">[</span><span class="sr">/o+/g</span><span class="p">,</span> <span class="s1">'u'</span><span class="p">],</span>
+    <span class="p">[</span><span class="sr">/a/g</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">]</span>
+<span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">spread</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">re</span><span class="p">,</span> <span class="nx">substitute</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">re</span><span class="p">,</span> <span class="nx">substitute</span><span class="p">);</span>
+<span class="p">}));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span> <span class="c1">// "fu bor qux boz"</span>
+</pre></div>
+
+<h1>
+<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h1>
+
+<h2>
+<a name="spreadfnfunctionfunction" class="anchor" href="#spreadfnfunctionfunction"><span class="octicon octicon-link"></span></a>spread(fn:Function):Function</h2>
+
+<p>Wraps the given function in a function that accepts an array as first argument.</p>
+
+<p>If the returned function is invoked as a method, the <code>this</code> reference will be used to invoke the function.</p>
+
+<p>If the returned function is passed additional arguments, they will be passed on as usual.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">spread</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'spread-args'</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">join</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="nx">c</span> <span class="o">||</span> <span class="s1">''</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">join2</span> <span class="o">=</span> <span class="nx">spread</span><span class="p">(</span><span class="nx">join</span><span class="p">);</span>
+
+<span class="nx">join2</span><span class="p">([</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">]);</span> <span class="c1">// 'foobar'</span>
+<span class="nx">join2</span><span class="p">([</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="s1">'-'</span><span class="p">]);</span> <span class="c1">// 'foo-bar'</span>
+<span class="nx">join2</span><span class="p">([</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">],</span> <span class="s1">'-'</span><span class="p">);</span> <span class="c1">// 'foo-bar'</span>
+</pre></div>
+
+<h1>
+<a name="unlicense" class="anchor" href="#unlicense"><span class="octicon octicon-link"></span></a>Unlicense</h1>
+
+<p>This is free and unencumbered public domain software. For more information, see <a href="http://unlicense.org/">http://unlicense.org/</a> or the accompanying <a href="https://github.com/pluma/spread-args/blob/master/UNLICENSE">UNLICENSE</a> file.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">spread-args maintained by <a href="https://github.com/pluma">pluma</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
