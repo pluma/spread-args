@@ -2,9 +2,13 @@
 
 **spread-args** is a JavaScript function for converting a function accepting multiple arguments into a function accepting a single array of arguments.
 
+[![stability 5 - locked](http://b.repl.ca/v1/stability-5_--_locked-blue.png)](http://nodejs.org/api/documentation.html#documentation_stability_index) [![license - Unlicense](http://b.repl.ca/v1/license-Unlicense-lightgrey.png)](http://unlicense.org/) [![Flattr this](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=pluma&url=https://github.com/pluma/spread-args)
+
 [![browser support](https://ci.testling.com/pluma/spread-args.png)](https://ci.testling.com/pluma/spread-args)
 
-[![Build Status](https://travis-ci.org/pluma/spread-args.png?branch=master)](https://travis-ci.org/pluma/spread-args) [![NPM version](https://badge.fury.io/js/spread-args.png)](http://badge.fury.io/js/spread-args) [![Dependencies](https://david-dm.org/pluma/spread-args.png)](https://david-dm.org/pluma/spread-args)
+[![Build Status](https://travis-ci.org/pluma/spread-args.png?branch=master)](https://travis-ci.org/pluma/spread-args) [![Coverage Status](https://coveralls.io/repos/pluma/spread-args/badge.png?branch=master)](https://coveralls.io/r/pluma/spread-args?branch=master) [![Dependencies](https://david-dm.org/pluma/spread-args.png?theme=shields.io)](https://david-dm.org/pluma/spread-args)
+
+[![NPM status](https://nodei.co/npm/spread-args.png?compact=true)](https://npmjs.org/package/spread-args)
 
 # Why?
 
