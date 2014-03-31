@@ -1,6 +1,6 @@
 {
   "name": "spread-args",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "Alan Plum <me@pluma.io>",
   "description": "Makes functions that expect multiple arguments accept a single array instead.",
   "licenses": {
@@ -19,12 +19,12 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "mocha": "~1.17",
+    "mocha": "~1.18",
     "expect.js": "~0.3",
     "uglify-js": "~2.4",
     "jshint": "~2.4",
     "istanbul": "~0.2",
-    "coveralls": "~2.8"
+    "coveralls": "~2.10"
   },
   "main": "./dist/spread-args.js",
   "scripts": {

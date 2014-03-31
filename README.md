@@ -92,7 +92,7 @@ console.log(str); // "fu bor qux boz"
 
 ## spread(fn:Function):Function
 
-Wraps the given function in a function that accepts an array as first argument.
+Wraps the given function in a function that accepts an array as first argument and invokes the wrapped function with the array's contents as arguments.
 
 If the returned function is invoked as a method, the `this` reference will be used to invoke the function.
 
@@ -112,6 +112,26 @@ var join2 = spread(join);
 join2(['foo', 'bar']); // 'foobar'
 join2(['foo', 'bar', '-']); // 'foo-bar'
 join2(['foo', 'bar'], '-'); // 'foo-bar'
+```
+
+## spread.unspread(fn:Function):Function
+
+Wraps the given function in a function that accepts any number of arguments and invokes the wrapped function with an array containing the arguments.
+
+If the returned function is invoked as a method, the `this` reference will be used to invoke the function.
+
+Example:
+
+```javascript
+var unspread = require('spread-args').unspread;
+
+function join(arr) {
+    return arr.join('-');
+}
+
+var join2 = unspread(join);
+
+join2('foo', 'bar'); // 'foo-bar'
 ```
 
 # Unlicense

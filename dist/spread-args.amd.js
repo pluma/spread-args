@@ -1,6 +1,7 @@
 /*! spread-args 0.1.2 Original author Alan Plum <me@pluma.io>. Released into the Public Domain under the UNLICENSE. @preserve */
 define(function(require, exports, module) {
 module.exports = spread;
+spread.unspread = unspread;
 
 function spread(fn) {
   return function(args) {
@@ -9,4 +10,9 @@ function spread(fn) {
     ));
   };
 }
-return module.exports;});
+
+function unspread(fn) {
+  return function() {
+    return fn.call(this, Array.prototype.slice.call(arguments, 0));
+  };
+}return module.exports;});
